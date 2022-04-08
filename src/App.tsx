@@ -1,10 +1,12 @@
-import './App.css'
-import Header from './Header'
+import './App.css';
+import Header from './Header';
+import UserApp from './UserApp';
 
 function App() {
   return (
     <div className='App'>
-      <Header headerText='This is a Header' extraText='some extra text' />
+      <Header headerText='Header' extraText='some extra text' />
+      <UserApp />
     </div>
   );
 }
