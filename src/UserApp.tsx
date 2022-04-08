@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { User } from './interfaces';
 
 const UserApp = () => {
+//                  state managment in typescript
   const [user, setUser] = useState<User | null>(null);
   const fetchUser = () => setUser({
     name: 'Bill',
