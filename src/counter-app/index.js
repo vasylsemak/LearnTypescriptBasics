@@ -1,29 +1,11 @@
 import './counter.css';
 import { useReducer } from 'react';
-
-const ACTIONS = {
-  INCREMENT: 'INCREMENT',
-  DECREMENT: 'DECREMENT'
-}
-const initialState = { count: 3 };
-
-const countReducer = (state, action) => {
-  switch (action.type) {
-    case ACTIONS.INCREMENT:
-      return { ...state, count: state.count + 1 }
-    case ACTIONS.DECREMENT:
-      return { ...state, count: state.count - 1 }
-    default:
-      return state
-  }
-}
-
+import counterReducer, { ACTIONS, initialState } from './counter-reducer';
 
 const CounterApp = () => {
-  const [counter, dispatch] = useReducer(countReducer, initialState);
-
-  const handleIncrement = () => dispatch({ type: 'INCREMENT' });
-  const handleDecrement = () => dispatch({ type: 'DECREMENT' });
+  const [counter, dispatch] = useReducer(counterReducer, initialState)
+  const handleIncrement = () => dispatch({ type: ACTIONS.INCREMENT });
+  const handleDecrement = () => dispatch({ type: ACTIONS.DECREMENT });
 
   return (
     <div className='app-style'>
